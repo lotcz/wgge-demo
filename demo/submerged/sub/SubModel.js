@@ -50,18 +50,10 @@ export default class SubModel extends TankModel {
 		this.zoom = this.addProperty('zoom', new FloatValue(1));
 		this.center = this.addProperty('center', new Vector2(0, 0, false));
 
-		this.waterTanks = this.addProperty('waterTanks', new ModelNodeCollection(() => new TankModel()));
-		this.waterTanks.add(new TankModel(25, 50, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(5, 50, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(10, 50, TANK_SHAPE_WATER, FLUID_WATER));
-		this.oxygenTanks = this.addProperty('oxygenTanks', new ModelNodeCollection(() => new TankModel()));
-		this.oxygenTanks.add(new TankModel(20, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(15, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(10, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-
 		this.subWeight = this.addProperty('subWeight', new FloatValue(10, false));
+
+		this.waterTanks = this.addProperty('waterTanks', new ModelNodeCollection(() => new TankModel()));
+		this.oxygenTanks = this.addProperty('oxygenTanks', new ModelNodeCollection(() => new TankModel()));
 
 		const updateHandler = () => this.updateSubWeight();
 		this.totalWeight.addEventListener('change', updateHandler);
@@ -69,6 +61,15 @@ export default class SubModel extends TankModel {
 		this.waterTanks.addEventListener('remove', (t) => t.totalWeight.removeEventListener('change', updateHandler));
 		this.oxygenTanks.addEventListener('add', (t) => t.totalWeight.addEventListener('change', updateHandler));
 		this.oxygenTanks.addEventListener('remove', (t) => t.totalWeight.removeEventListener('change', updateHandler));
+
+		this.waterTanks.add(new TankModel(25, 50, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(5, 50, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(10, 50, TANK_SHAPE_WATER, FLUID_WATER));
+		this.oxygenTanks.add(new TankModel(20, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
+		this.oxygenTanks.add(new TankModel(15, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
+		this.oxygenTanks.add(new TankModel(10, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
+		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
+		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 
 		this.updateSubWeight();
 	}

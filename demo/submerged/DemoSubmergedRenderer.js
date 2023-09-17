@@ -4,6 +4,9 @@ import WaterRenderer from "./ocean/WaterRenderer";
 import SurfaceRenderer from "./ocean/SurfaceRenderer";
 import SubRenderer from "./sub/SubRenderer";
 import {SVG} from "@svgdotjs/svg.js";
+import Vector2Renderer from "wgge/core/renderer/dom/Vector2Renderer";
+import NumberHelper from "wgge/core/helper/NumberHelper";
+import DirtyValueRenderer from "wgge/core/renderer/dom/DirtyValueRenderer";
 
 export default class DemoSubmergedRenderer extends SaveGameRenderer {
 
@@ -38,6 +41,12 @@ export default class DemoSubmergedRenderer extends SaveGameRenderer {
 
 		this.addChild(new SurfaceRenderer(this.game, this.model.ocean, this.draw));
 		this.addChild(new SubRenderer(this.game, this.model.sub, this.draw));
+
+		const info= DOMHelper.createElement(this.container, 'div', 'info-float');
+		const depth = DOMHelper.createElement(info, 'div');
+		this.addChild(new Vector2Renderer(this.game, this.model.coordinates, depth, (c) => `${NumberHelper.round(c.y, 1)}m`));
+		const weight = DOMHelper.createElement(info, 'div');
+		this.addChild(new DirtyValueRenderer(this.game, this.model.sub.subWeight, weight, (w) => `${NumberHelper.round(w, 1)}kg`))
 	}
 
 	deactivateInternal() {

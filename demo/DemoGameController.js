@@ -47,6 +47,7 @@ export default class DemoGameController extends GameController {
 	afterActivatedInternal() {
 		super.afterActivatedInternal();
 		this.showMainMenu();
+		this.model.editor.isVisible.set(false);
 	}
 
 	changeDemoType() {
