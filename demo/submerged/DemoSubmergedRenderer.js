@@ -34,6 +34,8 @@ export default class DemoSubmergedRenderer extends SaveGameRenderer {
 		const ocean = DOMHelper.createElement(this.container, 'div', 'canvas ocean container');
 		this.oceanCanvas = DOMHelper.createElement(ocean, 'canvas');
 
+		const physicsOverlay = DOMHelper.createElement(this.container, 'div', 'physics-overlay');
+
 		this.addChild(new WaterRenderer(this.game, this.model.ocean, this.oceanCanvas));
 
 		const svg = DOMHelper.createElement(this.container, 'div', 'svg ocean container');
@@ -44,9 +46,10 @@ export default class DemoSubmergedRenderer extends SaveGameRenderer {
 
 		const info= DOMHelper.createElement(this.container, 'div', 'info-float');
 		const depth = DOMHelper.createElement(info, 'div');
-		this.addChild(new Vector2Renderer(this.game, this.model.coordinates, depth, (c) => `${NumberHelper.round(c.y, 1)}m`));
+		this.addChild(new Vector2Renderer(this.game, this.model.coordinates, depth, (c) => `${NumberHelper.round(-c.y/30, 1)}m`));
 		const weight = DOMHelper.createElement(info, 'div');
-		this.addChild(new DirtyValueRenderer(this.game, this.model.sub.subWeight, weight, (w) => `${NumberHelper.round(w, 1)}kg`))
+		this.addChild(new DirtyValueRenderer(this.game, this.model.sub.subWeight, weight, (w) => `${NumberHelper.round(w, 1)}kg`));
+
 	}
 
 	deactivateInternal() {

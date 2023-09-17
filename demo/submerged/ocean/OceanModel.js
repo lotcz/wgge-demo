@@ -60,7 +60,7 @@ export default class OceanModel extends ObjectModel {
 
 		this.cornerCoordinates = this.addProperty('cornerCoordinates', new Vector2(0, 0));
 		this.viewBoxSize = this.addProperty('viewBoxSize', new Vector2());
-		this.oceanSize = this.addProperty('oceanDepth', new Vector2(2000, 2000));
+		this.oceanSize = this.addProperty('oceanDepth', new Vector2(2000, 500));
 
 		this.surfaceStart = this.addProperty('surfaceStart', new Vector2());
 		this.bottomStart = this.addProperty('bottomStart', new Vector2());
