@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>DEMO - Web GL Game Engine</title>
+		<link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'">
+		<script defer src="index.bundle.js"></script>
+		<style>
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				background-color: #000;
+			}
+
+			#initial_loading {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 2rem;
+				animation-name: loadanim;
+				animation-duration: 2s;
+				animation-direction: alternate;
+				animation-iteration-count: infinite;
+			}
+
+			@keyframes loadanim {
+				from {color: #0a0a0a;}
+				to {color: #f0f0f0;}
+			}
+
+		</style>
+    </head>
+    <body>
+		<div id="initial_loading"><div>Loading...</div></div>
+    </body>
+</html>
