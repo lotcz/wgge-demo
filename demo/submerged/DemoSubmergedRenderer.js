@@ -49,6 +49,10 @@ export default class DemoSubmergedRenderer extends SaveGameRenderer {
 		this.addChild(new Vector2Renderer(this.game, this.model.coordinates, depth, (c) => `${NumberHelper.round(-c.y/30, 1)}m`));
 		const weight = DOMHelper.createElement(info, 'div');
 		this.addChild(new DirtyValueRenderer(this.game, this.model.sub.subWeight, weight, (w) => `${NumberHelper.round(w, 1)}kg`));
+		const submerged = DOMHelper.createElement(info, 'div');
+		this.addChild(new DirtyValueRenderer(this.game, this.model.submerged, submerged, (s) => `${Math.round(s * 100)}%`));
+		const buoyancy = DOMHelper.createElement(info, 'div');
+		this.addChild(new DirtyValueRenderer(this.game, this.model.sub.subVolume, buoyancy, (b) => `${NumberHelper.round(b, 1)}kg`));
 
 	}
 

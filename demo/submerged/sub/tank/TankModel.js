@@ -76,7 +76,7 @@ export default class TankModel extends ObjectModel {
 	}
 
 	updateSize() {
-		this.size.set(this.shape.size.multiply(this.capacity.max.get()));
+		this.size.set(this.shape.size.multiply(Math.pow(this.capacity.max.get() * 300, 1/3)));
 	}
 
 }

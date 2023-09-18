@@ -24,6 +24,11 @@ export default class SubModel extends TankModel {
 	subWeight;
 
 	/**
+	 * @type FloatValue
+	 */
+	subVolume;
+
+	/**
 	 * @type ModelNodeCollection<TankModel>
 	 */
 	waterTanks;
@@ -36,13 +41,13 @@ export default class SubModel extends TankModel {
 	constructor() {
 		super(
 			0,
-			150,
+			2500,
 			new TankShapeModel(
 				new Vector2(1, 1),
 				new Vector3(150, 150, 180),
 				new Vector3(50, 50, 50),
-				2,
-				2
+				1.5,
+				0.75
 			),
 			FLUID_WATER
 		);
@@ -51,20 +56,25 @@ export default class SubModel extends TankModel {
 		this.center = this.addProperty('center', new Vector2(0, 0, false));
 
 		this.subWeight = this.addProperty('subWeight', new FloatValue(10, false));
+		this.subVolume = this.addProperty('subVolume', new FloatValue(10, false));
 
 		this.waterTanks = this.addProperty('waterTanks', new ModelNodeCollection(() => new TankModel()));
 		this.oxygenTanks = this.addProperty('oxygenTanks', new ModelNodeCollection(() => new TankModel()));
 
 		const updateHandler = () => this.updateSubWeight();
+		const updateVolumeHandler = () => this.updateSubVolume();
 		this.totalWeight.addEventListener('change', updateHandler);
+		this.capacity.max.addEventListener('change', updateVolumeHandler);
 		this.waterTanks.addEventListener('add', (t) => t.totalWeight.addEventListener('change', updateHandler));
+		this.waterTanks.addEventListener('add', (t) => t.capacity.max.addEventListener('change', updateVolumeHandler));
 		this.waterTanks.addEventListener('remove', (t) => t.totalWeight.removeEventListener('change', updateHandler));
+		this.waterTanks.addEventListener('remove', (t) => t.capacity.max.addEventListener('change', updateVolumeHandler));
 		this.oxygenTanks.addEventListener('add', (t) => t.totalWeight.addEventListener('change', updateHandler));
 		this.oxygenTanks.addEventListener('remove', (t) => t.totalWeight.removeEventListener('change', updateHandler));
 
-		this.waterTanks.add(new TankModel(25, 50, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(5, 50, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(10, 50, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(150, 150, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(5, 150, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(10, 150, TANK_SHAPE_WATER, FLUID_WATER));
 		this.oxygenTanks.add(new TankModel(20, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 		this.oxygenTanks.add(new TankModel(15, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 		this.oxygenTanks.add(new TankModel(10, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
@@ -72,6 +82,7 @@ export default class SubModel extends TankModel {
 		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 
 		this.updateSubWeight();
+		this.updateSubVolume();
 	}
 
 	updateSubWeight() {
@@ -79,5 +90,11 @@ export default class SubModel extends TankModel {
 		const water = this.waterTanks.reduce((w, t) => w + t.totalWeight.get(), 0);
 		const oxygen = this.oxygenTanks.reduce((w, t) => w + t.totalWeight.get(), 0);
 		this.subWeight.set(sub + water + oxygen);
+	}
+
+	updateSubVolume() {
+		const sub = this.capacity.max.get();
+		const water = this.waterTanks.reduce((w, t) => w + t.capacity.max.get(), 0);
+		this.subVolume.set(sub + water);
 	}
 }

@@ -21,21 +21,26 @@ export default class DemoSubmergedModel extends ObjectModel {
 	 */
 	ocean;
 
-
 	/**
 	 * @type SubModel
 	 */
 	sub;
 
+	/**
+	 * @type FloatValue
+	 */
+	submerged;
+
 	constructor() {
 		super();
 
-		this.coordinates = this.addProperty('coordinates', new Vector2());
+		this.coordinates = this.addProperty('coordinates', new Vector2(0, -100));
 		this.zoom = this.addProperty('zoom', new FloatValue(1));
 
 		this.ocean = this.addProperty('ocean', new OceanModel());
 		this.sub = this.addProperty('sub', new SubModel());
 
+		this.submerged = this.addProperty('submerged', new FloatValue(1, false));
 	}
 
 }

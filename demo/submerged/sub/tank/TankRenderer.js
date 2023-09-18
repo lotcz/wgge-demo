@@ -82,18 +82,12 @@ export default class TankRenderer extends SvgRenderer {
 
 			const pos = this.getPosition();
 
-			this.filling = this.group
-				.rect(
-					this.model.size.x,
-					height
-				);
-			this.filling.fill(
-					this.model.content.color.asRgbColor()
-				);
-			this.filling.center(
-					pos.x,
-					pos.y + (top / 2)
-				);
+			this.filling = this.group.rect(this.model.size.x, height);
+			this.filling.fill(this.model.content.color.asRgbColor());
+			this.filling.center(pos.x, pos.y + (top / 2));
+			this.filling.click(
+				() => this.model.triggerEvent('click')
+			);
 
 			const ellipse = this.drawEllipse(
 				this.group,

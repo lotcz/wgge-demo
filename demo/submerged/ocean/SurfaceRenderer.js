@@ -31,11 +31,11 @@ export default class SurfaceRenderer extends SvgRenderer {
 
 		if (!this.model.isSurfaceVisible.get()) return;
 
-		const WAVE_LENGTH = 50;
+		const WAVE_LENGTH = 30;
 		const WAVE_HEIGHT = 10;
 		const start = this.model.surfaceStart;
 		const phase = Math.sin(this.model.oceanSurfacePhase.get() * 2 * Math.PI);
-		const wave = new Vector2(WAVE_LENGTH / 4, WAVE_HEIGHT * phase);
+		const wave = new Vector2(WAVE_LENGTH / 4, WAVE_HEIGHT * phase / 2);
 
 		const pathStart = `M${start.x},${start.y} Q${start.x + wave.x},${start.y + wave.y} ${start.x + (wave.x * 2)},${start.y} `;
 

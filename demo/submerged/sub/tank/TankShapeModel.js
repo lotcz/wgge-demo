@@ -35,7 +35,7 @@ export default class TankShapeModel extends ObjectModel {
 		color = new Vector3(150, 150, 150),
 		strokeColor = new Vector3(10, 10, 10),
 		strokeWidth = 0.5,
-		weight = 1
+		weight = 0.75
 	) {
 		super();
 
