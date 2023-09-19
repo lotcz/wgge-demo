@@ -1,10 +1,11 @@
 import ControllerBase from "wgge/core/controller/ControllerBase";
 import AnimationFloatController from "wgge/core/controller/AnimationFloatController";
+import Vector2 from "wgge/core/model/vector/Vector2";
 
 export default class TankController extends ControllerBase {
 
 	/**
-	 * @type SubModel
+	 * @type TankModel
 	 */
 	model;
 
@@ -45,6 +46,13 @@ export default class TankController extends ControllerBase {
 				500
 			)
 		);
+	}
+
+	updateInternal(delta) {
+		if (this.model.physicsBody) {
+			const ph = new Vector2(this.model.physicsBody.position);
+			this.model.absoluteCoordinates.set(ph);
+		}
 	}
 
 }

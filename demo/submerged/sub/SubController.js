@@ -2,6 +2,7 @@
 import TankController from "./tank/TankController";
 import CollectionController from "wgge/core/controller/CollectionController";
 import ControllerBase from "wgge/core/controller/ControllerBase";
+import Vector2 from "wgge/core/model/vector/Vector2";
 
 export default class SubController extends ControllerBase {
 
@@ -43,26 +44,32 @@ export default class SubController extends ControllerBase {
 		);
 	}
 
-	arrangeTanks(tanks, y, gap = 10) {
-		let minX = 0;
-		let maxX = 0;
-		let x = 0;
+	getTankPosition(angle, distance) {
+		const x = Math.sin(angle);
+		const y = Math.cos(angle);
+		return new Vector2(x, y).multiply(distance);
+	}
+
+	arrangeTanks(tanks, distance, start = 0, gap = Math.PI/4) {
+		let minX = start;
+		let maxX = start;
+		let x = start;
 
 		tanks.forEach((t) => {
-			t.position.set(x, y);
-			if (x < 0) {
-				x = maxX + t.size.x + gap;
+			t.position.set(this.getTankPosition(x, distance));
+			if (x < start) {
+				x = maxX + gap;
 				maxX = x;
 			} else {
-				x = minX - t.size.x - gap;
+				x = minX - gap;
 				minX = x;
 			}
 		});
 	}
 
 	rearrange() {
-		this.arrangeTanks(this.model.oxygenTanks, -this.model.size.y * 0.25, 3);
-		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.35);
+		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.35, Math.PI, Math.PI/8);
+		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.7, 0);
 
 	}
 

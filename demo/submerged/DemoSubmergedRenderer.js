@@ -42,7 +42,7 @@ export default class DemoSubmergedRenderer extends SaveGameRenderer {
 		this.draw = SVG().addTo(svg);
 
 		this.addChild(new SurfaceRenderer(this.game, this.model.ocean, this.draw));
-		this.addChild(new SubRenderer(this.game, this.model.sub, this.draw));
+		this.addChild(new SubRenderer(this.game, this.model.sub, this.draw, this.model.ocean));
 
 		const info= DOMHelper.createElement(this.container, 'div', 'info-float');
 		const depth = DOMHelper.createElement(info, 'div');

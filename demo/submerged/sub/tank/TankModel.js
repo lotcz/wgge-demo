@@ -15,7 +15,7 @@ export default class TankModel extends ObjectModel {
 	/**
 	 * @type Vector2
 	 */
-	absolutePosition;
+	absoluteCoordinates;
 
 	/**
 	 * @type CapacityValue
@@ -42,6 +42,11 @@ export default class TankModel extends ObjectModel {
 	 */
 	totalWeight;
 
+	/**
+	 * @type body|null
+	 */
+	physicsBody;
+
 	constructor(
 		fill = 2.5,
 		max = 5,
@@ -51,7 +56,7 @@ export default class TankModel extends ObjectModel {
 		super();
 
 		this.position = this.addProperty('position', new Vector2());
-		this.absolutePosition = this.addProperty('absolutePosition', new Vector2(0, 0, false));
+		this.absoluteCoordinates = this.addProperty('absoluteCoordinates', new Vector2(0, 0, false));
 		this.capacity = this.addProperty('capacity', new CapacityValue(0, max, fill));
 		this.shape = this.addProperty('shape', shape);
 		this.content = this.addProperty('content', content);

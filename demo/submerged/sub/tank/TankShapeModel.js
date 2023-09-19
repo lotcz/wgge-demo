@@ -57,7 +57,7 @@ export const TANK_SHAPE_OXYGEN = new TankShapeModel(
 );
 
 export const TANK_SHAPE_WATER = new TankShapeModel(
-	new Vector2(1.3, 0.7),
+	new Vector2(1, 1),
 	new Vector3(120, 120, 150),
 	new Vector3(20, 20, 40),
 	1,

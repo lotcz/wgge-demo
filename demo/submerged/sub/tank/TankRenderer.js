@@ -10,20 +10,20 @@ export default class TankRenderer extends SvgRenderer {
 	model;
 
 	/**
-	 * @type SubModel
+	 * @type OceanModel
 	 */
-	sub;
+	ocean;
 
-	constructor(game, model, draw, sub) {
+	constructor(game, model, draw, ocean) {
 		super(game, model, draw);
 
 		this.model = model;
-		this.sub = sub;
+		this.ocean = ocean;
 
 		this.addAutoEvent(
-			this.sub.center,
+			this.ocean.cornerCoordinates,
 			'change',
-			() => this.drawTank()
+			() => this.moveTank()
 		);
 	}
 
@@ -38,27 +38,54 @@ export default class TankRenderer extends SvgRenderer {
 		this.group = null;
 	}
 
-	getPosition() {
-		return this.sub.center.add(this.model.position);
+	renderInternal() {
+		if (this.model.capacity.isDirty) {
+			this.updateFill();
+		}
+		if (this.model.absoluteCoordinates.isDirty) {
+			this.moveTank();
+		}
+	}
+
+	getScreenPosition() {
+		return this.model.absoluteCoordinates.sub(this.ocean.cornerCoordinates);
+	}
+
+	moveTank() {
+		if (!this.ellipse) return;
+		const pos = this.getScreenPosition();
+		this.ellipse.center(pos.x, pos.y);
+		const pe = pos.add(new Vector2(0, this.model.size.y * -0.5));
+		this.exhaust.center(pe.x, pe.y);
+		this.moveFill();
+	}
+
+	getFillPosition() {
+		const pos = this.getScreenPosition();
+		return pos
+			.sub(this.model.size.multiply(0.5))
+			.add(new Vector2(0, this.model.size.y * (1 -  this.model.capacity.progress.get())));
+	}
+
+	moveFill() {
+		if (!this.fill) return;
+		const pf = this.getFillPosition();
+		this.fill.move(pf.x, pf.y);
+
+		if (!this.clippingEllipse) return;
+		const pos = this.getScreenPosition();
+		this.clippingEllipse.center(pos.x, pos.y);
 	}
 
 	drawTank() {
 		if (this.ellipse) this.ellipse.remove();
-		if (this.filling) this.filling.remove();
 		if (this.exhaust) this.exhaust.remove();
-		if (this.clip) this.clip.remove();
 
-		let color;
-		if (this.model.content.isLiquid.get()) {
-			color = this.model.shape.color.asRgbColor();
-		} else {
-			const colorProgress = new ProgressVector3(this.model.shape.color, this.model.content.color);
-			color = colorProgress.get(this.model.capacity.progress.get()).asRgbColor();
-		}
+		let color = this.model.shape.color.asRgbColor();
 
 		this.ellipse = this.drawEllipse(
 			this.group,
-			this.getPosition(),
+			new Vector2(),
 			this.model.size,
 			{width: this.model.shape.strokeWidth.get(), color: this.model.shape.strokeColor.asRgbColor()},
 			color
@@ -68,7 +95,7 @@ export default class TankRenderer extends SvgRenderer {
 
 		this.exhaust = this.drawEllipse(
 			this.group,
-			this.getPosition().sub(new Vector2(0, this.model.size.y * 0.5)),
+			new Vector2(0, this.model.size.y * -0.5),
 			this.model.size.multiply(0.3),
 			{width: this.model.shape.strokeWidth.get(), color: this.model.shape.strokeColor.asRgbColor()},
 			this.model.shape.color.asRgbColor()
@@ -76,31 +103,39 @@ export default class TankRenderer extends SvgRenderer {
 			() => this.model.triggerEvent('exhaust-click')
 		);
 
+		this.updateFill();
+
+		this.moveTank();
+	}
+
+	updateFill() {
+		if (this.fill) this.fill.remove();
+		if (this.clip) this.clip.remove();
+
 		if (this.model.content.isLiquid.get() && this.model.capacity.get() > 0) {
 			const height = this.model.size.y * this.model.capacity.progress.get();
-			const top = this.model.size.y - height;
-
-			const pos = this.getPosition();
-
-			this.filling = this.group.rect(this.model.size.x, height);
-			this.filling.fill(this.model.content.color.asRgbColor());
-			this.filling.center(pos.x, pos.y + (top / 2));
-			this.filling.click(
+			this.fill = this.group.rect(this.model.size.x, height);
+			this.fill.fill(this.model.content.color.asRgbColor());
+			this.fill.click(
 				() => this.model.triggerEvent('click')
 			);
 
-			const ellipse = this.drawEllipse(
+			this.clippingEllipse = this.drawEllipse(
 				this.group,
-				pos,
+				new Vector2(),
 				this.model.size
 			);
 
-			this.clip = this.group.clip().add(ellipse);
-			this.filling.clipWith(this.clip);
+			this.clip = this.group.clip().add(this.clippingEllipse);
+			this.fill.clipWith(this.clip);
+
+			this.moveFill();
+		} else {
+			const colorProgress = new ProgressVector3(this.model.shape.color, this.model.content.color);
+			const color = colorProgress.get(this.model.capacity.progress.get()).asRgbColor();
+			this.ellipse.fill(color);
 		}
+
 	}
 
-	renderInternal() {
-		this.drawTank();
-	}
 }

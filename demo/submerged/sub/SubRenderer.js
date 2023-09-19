@@ -9,10 +9,16 @@ export default class SubRenderer extends SvgRenderer {
 	 */
 	model;
 
-	constructor(game, model, draw) {
+	/**
+	 * @type OceanModel
+	 */
+	ocean;
+
+	constructor(game, model, draw, ocean) {
 		super(game, model, draw);
 
 		this.model = model;
+		this.ocean = ocean;
 
 	}
 
@@ -23,13 +29,13 @@ export default class SubRenderer extends SvgRenderer {
 		this.hull = this.group.group();
 		this.tanks = this.group.group();
 
-		this.addChild(new TankRenderer(this.game, this.model, this.hull, this.model));
+		this.addChild(new TankRenderer(this.game, this.model, this.hull, this.ocean));
 
 		this.addChild(
 			new CollectionRenderer(
 				this.game,
 				this.model.oxygenTanks,
-				(m) => new TankRenderer(this.game, m, this.tanks, this.model)
+				(m) => new TankRenderer(this.game, m, this.tanks, this.ocean)
 			)
 		);
 
@@ -37,7 +43,7 @@ export default class SubRenderer extends SvgRenderer {
 			new CollectionRenderer(
 				this.game,
 				this.model.waterTanks,
-				(m) => new TankRenderer(this.game, m, this.tanks, this.model)
+				(m) => new TankRenderer(this.game, m, this.tanks, this.ocean)
 			)
 		);
 

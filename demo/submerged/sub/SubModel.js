@@ -44,9 +44,9 @@ export default class SubModel extends TankModel {
 			2500,
 			new TankShapeModel(
 				new Vector2(1, 1),
-				new Vector3(150, 150, 180),
-				new Vector3(50, 50, 50),
-				1.5,
+				new Vector3(120, 120, 150),
+				new Vector3(70, 70, 70),
+				1.2,
 				0.75
 			),
 			FLUID_WATER
