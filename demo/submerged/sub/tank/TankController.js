@@ -1,6 +1,8 @@
 import ControllerBase from "wgge/core/controller/ControllerBase";
 import AnimationFloatController from "wgge/core/controller/AnimationFloatController";
 import Vector2 from "wgge/core/model/vector/Vector2";
+import ProgressValue from "wgge/core/animation/ProgressValue";
+import Matter from "matter-js";
 
 export default class TankController extends ControllerBase {
 
@@ -52,6 +54,7 @@ export default class TankController extends ControllerBase {
 		if (this.model.physicsBody) {
 			const ph = new Vector2(this.model.physicsBody.position);
 			this.model.absoluteCoordinates.set(ph);
+
 		}
 	}
 

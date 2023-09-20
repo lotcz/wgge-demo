@@ -70,6 +70,10 @@ export default class DemoSubmergedController extends SaveGameController {
 
 	}
 
+	activateInternal() {
+
+	}
+
 	afterActivatedInternal() {
 		this.engine = Matter.Engine.create({
 			enableSleeping: false
@@ -262,22 +266,23 @@ export default class DemoSubmergedController extends SaveGameController {
 		);
 		bodies.push(hanger);
 		tank.physicsBody = hanger;
-
+/*
 		bodies.push(this.createTankHolder(tank, subBody, hanger, -0.8));
 		bodies.push(this.createTankHolder(tank, subBody, hanger,0));
 		bodies.push(this.createTankHolder(tank, subBody, hanger,0.8));
+*/
 
-
-		/*
+/*
 		bodies.push(
 			Matter.Constraint.create({
 				bodyA: hanger,
 				bodyB: subBody,
-				pointB: { x: 0, y: 0 },
 				stiffness: 1,
 				length: 0
 			})
-		);*/
+		);
+
+ */
 		return hanger;
 	}
 
@@ -288,18 +293,30 @@ export default class DemoSubmergedController extends SaveGameController {
 	 * @return
 	 */
 	addSubBody(sub, bodies) {
+		//const group = Matter.Body.nextGroup(true);
 		const body = Matter.Bodies.circle(
 			this.model.coordinates.x,
 			this.model.coordinates.y,
 			sub.size.x/2,
 			{
+				//collisionFilter: { group: group },
 				frictionAir: 0.01,
 				friction: 0.01,
 				restitution: 0.8,
 				mass: sub.subWeight.get() / 1000
 			}
 		);
-		const parts = [body];
+		const chassis = Matter.Bodies.rectangle(
+			this.model.coordinates.x,
+			this.model.coordinates.y + 30,
+				110,
+				15,
+			{
+				//collisionFilter: { group: group },
+				mass: 0.05
+			}
+		);
+		const parts = [body, chassis];
 		sub.oxygenTanks.forEach((ot) => {
 			parts.push(
 				ot.physicsBody = Matter.Bodies.circle(
@@ -316,13 +333,17 @@ export default class DemoSubmergedController extends SaveGameController {
 			);
 		});
 
+		this.model.sub.waterTanks.forEach((wt) => {
+			this.addTankHanger(wt, body, parts);
+		});
+
 		const compoundBody = Matter.Body.create({parts: parts});
 		bodies.push(compoundBody);
-
+/*
 		this.model.sub.waterTanks.forEach((wt) => {
 			this.addTankHanger(wt, compoundBody, bodies);
 		});
-
+*/
 		return compoundBody;
 	}
 

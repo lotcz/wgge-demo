@@ -72,14 +72,11 @@ export default class SubModel extends TankModel {
 		this.oxygenTanks.addEventListener('add', (t) => t.totalWeight.addEventListener('change', updateHandler));
 		this.oxygenTanks.addEventListener('remove', (t) => t.totalWeight.removeEventListener('change', updateHandler));
 
-		this.waterTanks.add(new TankModel(150, 150, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(5, 150, TANK_SHAPE_WATER, FLUID_WATER));
-		this.waterTanks.add(new TankModel(10, 150, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(150, 500, TANK_SHAPE_WATER, FLUID_WATER));
+		this.waterTanks.add(new TankModel(5, 500, TANK_SHAPE_WATER, FLUID_WATER));
 		this.oxygenTanks.add(new TankModel(20, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 		this.oxygenTanks.add(new TankModel(15, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 		this.oxygenTanks.add(new TankModel(10, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
-		this.oxygenTanks.add(new TankModel(0, 20, TANK_SHAPE_OXYGEN, FLUID_OXYGEN));
 
 		this.updateSubWeight();
 		this.updateSubVolume();

@@ -50,10 +50,10 @@ export default class SubController extends ControllerBase {
 		return new Vector2(x, y).multiply(distance);
 	}
 
-	arrangeTanks(tanks, distance, start = 0, gap = Math.PI/4) {
+	arrangeTanks(tanks, distance, start = 0, gap = Math.PI/3) {
 		let minX = start;
 		let maxX = start;
-		let x = start;
+		let x = (tanks.count() % 2) === 0 ? start-gap : start;
 
 		tanks.forEach((t) => {
 			t.position.set(this.getTankPosition(x, distance));
@@ -69,7 +69,7 @@ export default class SubController extends ControllerBase {
 
 	rearrange() {
 		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.35, Math.PI, Math.PI/8);
-		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.7, 0);
+		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.8, 0);
 
 	}
 
