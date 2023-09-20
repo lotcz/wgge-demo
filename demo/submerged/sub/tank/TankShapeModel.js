@@ -35,7 +35,7 @@ export default class TankShapeModel extends ObjectModel {
 		color = new Vector3(150, 150, 150),
 		strokeColor = new Vector3(10, 10, 10),
 		strokeWidth = 0.5,
-		weight = 0.75
+		weight = 0.65
 	) {
 		super();
 
@@ -57,7 +57,7 @@ export const TANK_SHAPE_OXYGEN = new TankShapeModel(
 );
 
 export const TANK_SHAPE_WATER = new TankShapeModel(
-	new Vector2(1.1, 1),
+	new Vector2(1, 1),
 	new Vector3(120, 120, 150),
 	new Vector3(20, 20, 40),
 	1,

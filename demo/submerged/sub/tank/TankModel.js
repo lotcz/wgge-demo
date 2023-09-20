@@ -13,11 +13,6 @@ export default class TankModel extends ObjectModel {
 	position;
 
 	/**
-	 * @type Vector2
-	 */
-	absoluteCoordinates;
-
-	/**
 	 * @type CapacityValue
 	 */
 	capacity;
@@ -35,6 +30,16 @@ export default class TankModel extends ObjectModel {
 	/**
 	 * @type Vector2
 	 */
+	absoluteCoordinates;
+
+	/**
+	 * @type FloatValue
+	 */
+	submerged;
+
+	/**
+	 * @type Vector2
+	 */
 	size;
 
 	/**
@@ -47,6 +52,11 @@ export default class TankModel extends ObjectModel {
 	 */
 	physicsBody;
 
+	/**
+	 * @type FloatValue
+	 */
+	leakage;
+
 	constructor(
 		fill = 2.5,
 		max = 5,
@@ -56,13 +66,15 @@ export default class TankModel extends ObjectModel {
 		super();
 
 		this.position = this.addProperty('position', new Vector2());
-		this.absoluteCoordinates = this.addProperty('absoluteCoordinates', new Vector2(0, 0, false));
 		this.capacity = this.addProperty('capacity', new CapacityValue(0, max, fill));
 		this.shape = this.addProperty('shape', shape);
 		this.content = this.addProperty('content', content);
 
-		this.size = this.addProperty('size', new Vector2());
-		this.totalWeight = this.addProperty('totalWeight', new FloatValue(2, false));
+		this.absoluteCoordinates = this.addProperty('absoluteCoordinates', new Vector2(0, 0, false));
+		this.submerged = this.addProperty('submerged', new FloatValue(1, false));
+		this.size = this.addProperty('size', new Vector2(0, 0, false));
+		this.totalWeight = this.addProperty('totalWeight', new FloatValue(0, false));
+		this.leakage = this.addProperty('leakage', new FloatValue(0, false));
 
 		this.capacity.addEventListener('change', () => this.updateTotalWeight());
 		this.capacity.max.addEventListener('change', () => this.updateSize());
@@ -81,7 +93,7 @@ export default class TankModel extends ObjectModel {
 	}
 
 	updateSize() {
-		this.size.set(this.shape.size.multiply(Math.pow(this.capacity.max.get() * 300, 1/3)));
+		this.size.set(this.shape.size.multiply(Math.pow(this.capacity.max.get() * 300, 1 / 3)));
 	}
 
 }

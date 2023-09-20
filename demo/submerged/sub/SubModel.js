@@ -47,7 +47,7 @@ export default class SubModel extends TankModel {
 				new Vector3(120, 120, 150),
 				new Vector3(70, 70, 70),
 				1.2,
-				0.75
+				0.65
 			),
 			FLUID_WATER
 		);
