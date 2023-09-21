@@ -27,6 +27,7 @@ export default class SubRenderer extends SvgRenderer {
 		this.group = this.draw.group();
 		this.group.addClass('sub-group');
 		this.hull = this.group.group();
+		this.interior = this.group.group();
 		this.tanks = this.group.group();
 
 		this.addChild(new TankRenderer(this.game, this.model, this.hull, this.ocean));
@@ -47,6 +48,12 @@ export default class SubRenderer extends SvgRenderer {
 			)
 		);
 
+		const image = this.getDefs().image('img/sub-interior.svg', () => {
+			image.scale(0.35, 0.35, 0.35);
+			this.interiorImage = image;
+			this.interior.add(image);
+		});
+
 	}
 
 	deactivateInternal() {
@@ -56,6 +63,17 @@ export default class SubRenderer extends SvgRenderer {
 		this.tanks = null;
 		this.group = null;
 		super.deactivateInternal();
+	}
+
+	getScreenPosition() {
+		return this.model.absoluteCoordinates.sub(this.ocean.cornerCoordinates);
+	}
+
+	renderInternal() {
+		if (!this.interiorImage) return;
+		const p = this.model.center;
+		this.interior.center(p.x, p.y);
+		this.rotate(this.interior, this.model.rotation.getDegrees());
 	}
 
 }

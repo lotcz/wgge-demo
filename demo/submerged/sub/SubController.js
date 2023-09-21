@@ -65,7 +65,7 @@ export default class SubController extends ControllerBase {
 				frictionAir: 0.01,
 				friction: 0.01,
 				restitution: 0.8,
-				mass: this.model.subWeight.get() / 1000
+				mass: this.model.totalWeight.get() / 1000
 			}
 		);
 		parts.push(body);
@@ -160,8 +160,8 @@ export default class SubController extends ControllerBase {
 
 	rearrange() {
 		this.model.position.set(0, 0);
-		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.35, Math.PI, Math.PI / 8);
-		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.9, 0);
+		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.4, 0, Math.PI / 6);
+		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.9, 0, Math.PI / 2.3);
 	}
 
 	createConstraint(tank, subBody, hanger, index) {

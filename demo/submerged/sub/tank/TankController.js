@@ -50,25 +50,23 @@ export default class TankController extends ControllerBase {
 		if (!(this.subBody && this.model.physicsBody)) return;
 
 		this.model.absoluteCoordinates.set(this.model.physicsBody.position);
+		this.model.rotation.set(this.subBody.angle);
 
 		const weight = this.model.totalWeight.get();
 		const volume = this.model.capacity.max.get();
 
 		this.model.physicsBody.mass = weight / 1000;
 
-		if (this.model.submerged.get() > 0) {
-			//console.log(this.subBody.angle);
-			const buoyancy = this.model.submerged.get() * ((weight - volume) / 1000);
-			const moveY = buoyancy * (delta / 30000);
-			Matter.Body.applyForce(
-				this.subBody,
-				this.model.physicsBody.position,
-				{
-					x: 0,
-					y: moveY
-				}
-			);
-		}
+		const gravitational = (weight / 1000);
+		const buoyancy = this.model.submerged.get() * (volume / 1000);
+		const force = gravitational - buoyancy;
+
+		const moveY = force * (delta / 30000);
+		Matter.Body.applyForce(
+			this.subBody,
+			this.model.physicsBody.position,
+			{x: 0, y: moveY}
+		);
 
 		if (this.model.leakage.get() !== 0) {
 			this.model.capacity.increase(this.model.leakage.get() * delta / 1000);

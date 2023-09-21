@@ -49,7 +49,7 @@ export default class TankShapeModel extends ObjectModel {
 }
 
 export const TANK_SHAPE_OXYGEN = new TankShapeModel(
-	new Vector2(0.8, 1.2),
+	new Vector2(1, 1),
 	new Vector3(150, 150, 150),
 	new Vector3(40, 40, 40),
 	0.5,

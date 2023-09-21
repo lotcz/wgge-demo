@@ -36,11 +36,12 @@ export default class TankRenderer extends SvgRenderer {
 
 	activateInternal() {
 		this.group = this.draw.group();
-
+		this.addControlHandlers(this.group);
 		this.drawTank();
 	}
 
 	deactivateInternal() {
+		this.removeControlHandlers(this.group);
 		this.group.remove();
 		this.group = null;
 	}
@@ -92,7 +93,6 @@ export default class TankRenderer extends SvgRenderer {
 
 	drawTank() {
 		if (this.ellipse) {
-			this.removeControlHandlers(this.ellipse);
 			this.ellipse.remove();
 		}
 
@@ -105,7 +105,6 @@ export default class TankRenderer extends SvgRenderer {
 			{width: this.model.shape.strokeWidth.get(), color: this.model.shape.strokeColor.asRgbColor()},
 			color
 		);
-		this.addControlHandlers(this.ellipse);
 
 		this.updateFill();
 		this.moveTank();
@@ -122,7 +121,7 @@ export default class TankRenderer extends SvgRenderer {
 			const height = this.model.size.y * this.model.capacity.progress.get();
 			this.fill = this.group.rect(this.model.size.x, height);
 			this.fill.fill(this.model.content.color.asRgbColor());
-			this.addControlHandlers(this.fill);
+			//this.addControlHandlers(this.fill);
 
 			this.clippingEllipse = this.drawEllipse(
 				this.group,

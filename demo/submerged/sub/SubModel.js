@@ -1,6 +1,6 @@
 import TankModel from "./tank/TankModel";
-import TankShapeModel, {TANK_SHAPE_OXYGEN, TANK_SHAPE_WATER} from "./tank/TankShapeModel";
-import {FLUID_OXYGEN, FLUID_WATER} from "./tank/FluidModel";
+import TankShapeModel, {TANK_SHAPE_OXYGEN, TANK_SHAPE_WATER} from "./tank/shape/TankShapeModel";
+import {FLUID_OXYGEN, FLUID_WATER} from "./tank/shape/FluidModel";
 import Vector2 from "wgge/core/model/vector/Vector2";
 import Vector3 from "wgge/core/model/vector/Vector3";
 import FloatValue from "wgge/core/model/value/FloatValue";

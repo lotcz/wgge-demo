@@ -1,9 +1,10 @@
 import ObjectModel from "wgge/core/model/ObjectModel";
-import TankShapeModel from "./TankShapeModel";
-import FluidModel from "./FluidModel";
+import TankShapeModel from "./shape/TankShapeModel";
+import FluidModel from "./shape/FluidModel";
 import Vector2 from "wgge/core/model/vector/Vector2";
 import CapacityValue from "wgge/core/model/value/CapacityValue";
 import FloatValue from "wgge/core/model/value/FloatValue";
+import Rotation from "wgge/core/model/vector/Rotation";
 
 export default class TankModel extends ObjectModel {
 
@@ -48,6 +49,11 @@ export default class TankModel extends ObjectModel {
 	totalWeight;
 
 	/**
+	 * @type Rotation
+	 */
+	rotation;
+
+	/**
 	 * @type body|null
 	 */
 	physicsBody;
@@ -74,6 +80,7 @@ export default class TankModel extends ObjectModel {
 		this.submerged = this.addProperty('submerged', new FloatValue(1, false));
 		this.size = this.addProperty('size', new Vector2(0, 0, false));
 		this.totalWeight = this.addProperty('totalWeight', new FloatValue(0, false));
+		this.rotation = this.addProperty('rotation', new Rotation(0, false));
 		this.leakage = this.addProperty('leakage', new FloatValue(0, false));
 
 		this.capacity.addEventListener('change', () => this.updateTotalWeight());
