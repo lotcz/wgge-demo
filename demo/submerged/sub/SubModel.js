@@ -1,8 +1,7 @@
 import TankModel from "./tank/TankModel";
-import TankShapeModel, {TANK_SHAPE_OXYGEN, TANK_SHAPE_WATER} from "./tank/shape/TankShapeModel";
+import {TANK_SHAPE_OXYGEN, TANK_SHAPE_SUB, TANK_SHAPE_WATER} from "./tank/shape/TankShapeModel";
 import {FLUID_OXYGEN, FLUID_WATER} from "./tank/shape/FluidModel";
 import Vector2 from "wgge/core/model/vector/Vector2";
-import Vector3 from "wgge/core/model/vector/Vector3";
 import FloatValue from "wgge/core/model/value/FloatValue";
 import ModelNodeCollection from "wgge/core/model/collection/ModelNodeCollection";
 
@@ -39,18 +38,7 @@ export default class SubModel extends TankModel {
 	oxygenTanks;
 
 	constructor() {
-		super(
-			0,
-			2500,
-			new TankShapeModel(
-				new Vector2(1, 1),
-				new Vector3(120, 120, 150),
-				new Vector3(70, 70, 70),
-				1.2,
-				0.65
-			),
-			FLUID_WATER
-		);
+		super(0, 2500, TANK_SHAPE_SUB, FLUID_WATER);
 
 		this.zoom = this.addProperty('zoom', new FloatValue(1));
 		this.center = this.addProperty('center', new Vector2(0, 0, false));

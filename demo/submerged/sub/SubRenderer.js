@@ -49,7 +49,8 @@ export default class SubRenderer extends SvgRenderer {
 		);
 
 		const image = this.getDefs().image('img/sub-interior.svg', () => {
-			image.scale(0.35, 0.35, 0.35);
+			const scale = 0.32;
+			image.scale(scale, scale, scale);
 			this.interiorImage = image;
 			this.interior.add(image);
 		});
@@ -73,7 +74,7 @@ export default class SubRenderer extends SvgRenderer {
 		if (!this.interiorImage) return;
 		const p = this.model.center;
 		this.interior.center(p.x, p.y);
-		this.rotate(this.interior, this.model.rotation.getDegrees());
+		this.rotate(this.interiorImage, this.model.rotation.getDegrees());
 	}
 
 }

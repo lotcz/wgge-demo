@@ -160,7 +160,7 @@ export default class SubController extends ControllerBase {
 
 	rearrange() {
 		this.model.position.set(0, 0);
-		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.4, 0, Math.PI / 6);
+		this.arrangeTanks(this.model.oxygenTanks, this.model.size.x * 0.6, 0, Math.PI / 4);
 		this.arrangeTanks(this.model.waterTanks, this.model.size.x * 0.9, 0, Math.PI / 2.3);
 	}
 

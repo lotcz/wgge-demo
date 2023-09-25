@@ -6,7 +6,7 @@
 	"dependencies": {
 		"@svgdotjs/svg.js": "^3.2.0",
 		"matter-js": "^0.19.0",
-		"wgge": "^0.0.4"
+		"wgge": "0.0.5"
 	},
 	"devDependencies": {
 		"concurrently": "^7.6.0",

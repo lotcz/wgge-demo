@@ -2,6 +2,7 @@ import ObjectModel from "wgge/core/model/ObjectModel";
 import Vector2 from "wgge/core/model/vector/Vector2";
 import Vector3 from "wgge/core/model/vector/Vector3";
 import FloatValue from "wgge/core/model/value/FloatValue";
+import Quaternion from "wgge/core/model/vector/Quaternion";
 
 export default class TankShapeModel extends ObjectModel {
 
@@ -11,7 +12,7 @@ export default class TankShapeModel extends ObjectModel {
 	size;
 
 	/**
-	 * @type Vector3
+	 * @type Quaternion
 	 */
 	color;
 
@@ -32,7 +33,7 @@ export default class TankShapeModel extends ObjectModel {
 
 	constructor(
 		size = new Vector2(1, 1),
-		color = new Vector3(150, 150, 150),
+		color = new Quaternion(150, 150, 150, 100),
 		strokeColor = new Vector3(10, 10, 10),
 		strokeWidth = 0.5,
 		weight = 0.65
@@ -48,18 +49,26 @@ export default class TankShapeModel extends ObjectModel {
 
 }
 
+export const TANK_SHAPE_SUB = new TankShapeModel(
+	new Vector2(1, 1),
+	new Quaternion(80, 110, 150, 0),
+	new Vector3(51, 51, 51),
+	3,
+	0.65
+);
+
 export const TANK_SHAPE_OXYGEN = new TankShapeModel(
 	new Vector2(1, 1),
-	new Vector3(150, 150, 150),
+	new Quaternion(150, 150, 150, 255),
 	new Vector3(40, 40, 40),
 	0.5,
-	0.5
+	0.65
 );
 
 export const TANK_SHAPE_WATER = new TankShapeModel(
 	new Vector2(1, 1),
-	new Vector3(120, 120, 150),
-	new Vector3(20, 20, 40),
-	1,
-	0.5
+	new Quaternion(120, 120, 150, 255),
+	new Vector3(51, 51, 51),
+	3,
+	0.65
 );

@@ -3,9 +3,9 @@
 
 <svg
    version="1.1"
-   width="480px"
-   height="229px"
-   viewBox="-0.5 -0.5 480 229"
+   width="300"
+   height="300"
+   viewBox="-0.5 -0.5 300 300"
    content="&lt;mxfile host=&quot;Electron&quot; modified=&quot;2023-09-20T23:10:12.251Z&quot; agent=&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36&quot; etag=&quot;XPU6zinB8-WYmDQba_f5&quot; version=&quot;21.6.1&quot; type=&quot;device&quot;&gt;&#10;  &lt;diagram name=&quot;Page-1&quot; id=&quot;YkJ-VEs5GkpDH7er21Qx&quot;&gt;&#10;    &lt;mxGraphModel dx=&quot;2006&quot; dy=&quot;1163&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;0&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;1169&quot; pageHeight=&quot;827&quot; background=&quot;none&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;&#10;      &lt;root&gt;&#10;        &lt;mxCell id=&quot;0&quot; /&gt;&#10;        &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-6&quot; value=&quot;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#2D353D;fontColor=#ffffff;strokeColor=none;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;4&quot; y=&quot;225&quot; width=&quot;478&quot; height=&quot;15&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-5&quot; value=&quot;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#2D353D;fontColor=#ffffff;strokeColor=none;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;2&quot; y=&quot;250&quot; width=&quot;480&quot; height=&quot;15&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-35&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#3C4752;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;155&quot; y=&quot;162&quot; width=&quot;168&quot; height=&quot;17&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-8&quot; value=&quot;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;strokeWidth=8;strokeColor=#2D353D;fillColor=none;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;166.5&quot; y=&quot;40&quot; width=&quot;141&quot; height=&quot;66&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-54&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#666666;strokeWidth=3;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;151&quot; y=&quot;195&quot; width=&quot;44&quot; height=&quot;47&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-55&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=#333333;fillColor=#4D4D4D;strokeWidth=3;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;230.25&quot; y=&quot;195&quot; width=&quot;77.75&quot; height=&quot;34&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-51&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#3C4752;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;130&quot; y=&quot;175&quot; width=&quot;213&quot; height=&quot;17&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-10&quot; value=&quot;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=#2D353D;fontColor=#ffffff;strokeColor=none;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;104&quot; y=&quot;189.5&quot; width=&quot;266&quot; height=&quot;8.5&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-17&quot; value=&quot;&quot; style=&quot;shape=mxgraph.signs.safety.high_voltage_3;html=1;pointerEvents=1;fillColor=#4F0000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;158.25&quot; y=&quot;205&quot; width=&quot;29.5&quot; height=&quot;27&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-36&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#3C4752;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;182.5&quot; y=&quot;148&quot; width=&quot;116&quot; height=&quot;16&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-53&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#3C4752;&quot; parent=&quot;1&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;198.75&quot; y=&quot;126&quot; width=&quot;75.5&quot; height=&quot;25&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-49&quot; value=&quot;&quot; style=&quot;group&quot; parent=&quot;1&quot; vertex=&quot;1&quot; connectable=&quot;0&quot;&gt;&#10;          &lt;mxGeometry x=&quot;214.5&quot; y=&quot;122&quot; width=&quot;90.5&quot; height=&quot;67.5&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-48&quot; value=&quot;&quot; style=&quot;group&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-49&quot; vertex=&quot;1&quot; connectable=&quot;0&quot;&gt;&#10;          &lt;mxGeometry x=&quot;1&quot; width=&quot;89.5&quot; height=&quot;57.75&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-43&quot; value=&quot;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#FFCC99;container=0;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-48&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;11&quot; y=&quot;3&quot; width=&quot;13&quot; height=&quot;22&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-44&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;fillColor=#006666;fontColor=#ffffff;strokeColor=none;container=0;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-48&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;2&quot; y=&quot;23.75&quot; width=&quot;26&quot; height=&quot;34&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-42&quot; value=&quot;&quot; style=&quot;ellipse;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#593E23;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-48&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;12&quot; width=&quot;19&quot; height=&quot;22&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-34&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#1C2126;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-49&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;6&quot; y=&quot;28.5&quot; width=&quot;39&quot; height=&quot;39&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-37&quot; value=&quot;&quot; style=&quot;shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=none;fillColor=#1C2126;size=12.142857142856997;rounded=1;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-49&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry x=&quot;3.5&quot; y=&quot;14&quot; width=&quot;44&quot; height=&quot;20.67&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;        &lt;mxCell id=&quot;ZbHjnFFa51J2TaqhgyNv-40&quot; value=&quot;&quot; style=&quot;rounded=1;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#1C2126;&quot; parent=&quot;ZbHjnFFa51J2TaqhgyNv-49&quot; vertex=&quot;1&quot;&gt;&#10;          &lt;mxGeometry y=&quot;44&quot; width=&quot;52&quot; height=&quot;23.5&quot; as=&quot;geometry&quot; /&gt;&#10;        &lt;/mxCell&gt;&#10;      &lt;/root&gt;&#10;    &lt;/mxGraphModel&gt;&#10;  &lt;/diagram&gt;&#10;&lt;/mxfile&gt;&#10;"
    id="svg13"
    sodipodi:docname="sub-interior.svg"
@@ -24,8 +24,8 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.9645833"
-     inkscape:cx="240"
-     inkscape:cy="87.53338"
+     inkscape:cx="153.98454"
+     inkscape:cy="132.73366"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
@@ -33,9 +33,56 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="g13" />
   <defs
-     id="defs1" />
+     id="defs1">
+    <inkscape:path-effect
+       effect="powerclip"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1"
+       inverse="true"
+       flatten="false"
+       hide_clip="false"
+       message="Use fill-rule evenodd on &lt;b&gt;fill and stroke&lt;/b&gt; dialog if no flatten result after convert clip to paths." />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4">
+      <ellipse
+         cx="235"
+         cy="37.000004"
+         rx="70.5"
+         ry="33"
+         fill="none"
+         stroke="#2d353d"
+         stroke-width="8"
+         pointer-events="all"
+         id="ellipse4"
+         style="display:none;fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+         d="m 305.5,37.000004 a 70.5,33 0 0 1 -70.5,33 70.5,33 0 0 1 -70.5,-33 A 70.5,33 0 0 1 235,4.0000038 70.5,33 0 0 1 305.5,37.000004 Z" />
+      <path
+         id="lpe_path-effect4"
+         style="fill:#000000;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+         class="powerclip"
+         d="M 80.615947,-50.537602 H 390.61596 V 259.46241 H 80.615947 Z M 305.5,37.000004 A 70.5,33 0 0 0 235,4.0000038 70.5,33 0 0 0 164.5,37.000004 a 70.5,33 0 0 0 70.5,33 70.5,33 0 0 0 70.5,-33 z" />
+    </clipPath>
+  </defs>
   <g
-     id="g13">
+     id="g13"
+     transform="translate(-86.115947,45.037602)">
+    <path
+       fill="none"
+       stroke="#2d353d"
+       stroke-width="8.00001"
+       pointer-events="all"
+       id="ellipse1"
+       style="fill:#787896;fill-opacity:1"
+       clip-path="url(#clipPath4)"
+       inkscape:path-effect="#path-effect4"
+       sodipodi:type="arc"
+       sodipodi:cx="235.61595"
+       sodipodi:cy="104.4624"
+       sodipodi:rx="146"
+       sodipodi:ry="146"
+       d="m 381.61595,104.4624 a 146,146 0 0 1 -146,146 146,146 0 0 1 -145.999998,-146 146,146 0 0 1 145.999998,-145.999998 146,146 0 0 1 146,145.999998 z" />
     <rect
        x="153"
        y="126"
@@ -62,8 +109,8 @@
        y="159"
        width="44"
        height="47"
-       rx="6.6"
-       ry="6.6"
+       rx="6.5999999"
+       ry="6.5999999"
        fill="#666666"
        stroke="#333333"
        stroke-width="3"
@@ -74,8 +121,8 @@
        y="159"
        width="77.75"
        height="34"
-       rx="5.1"
-       ry="5.1"
+       rx="5.0999999"
+       ry="5.0999999"
        fill="#4d4d4d"
        stroke="#333333"
        stroke-width="3"
@@ -93,14 +140,15 @@
        pointer-events="all"
        id="rect6" />
     <rect
-       x="102"
+       x="99.301483"
        y="153.5"
-       width="266"
+       width="271.73438"
        height="8.5"
        fill="#2d353d"
        stroke="none"
        pointer-events="all"
-       id="rect7" />
+       id="rect7"
+       style="stroke-width:1" />
     <rect
        x="156.25"
        y="169"
@@ -111,7 +159,7 @@
        pointer-events="all"
        id="rect8" />
     <path
-       d="M 170.34 177.79 L 166.87 186.68 L 171.73 184.95 L 170.48 189.82 L 169.65 189.14 L 170.07 191.88 L 171.94 189.59 L 170.78 189.88 L 173.65 183.44 L 168.47 185.11 L 172.21 177.73 Z M 170.87 169.06 C 170.61 169.1 170.38 169.27 170.25 169.5 L 156.4 194.63 C 156.25 194.91 156.25 195.27 156.4 195.54 C 156.56 195.82 156.84 196 157.15 196 L 184.85 196 C 185.16 196 185.45 195.82 185.6 195.54 C 185.75 195.27 185.75 194.91 185.6 194.63 L 171.75 169.5 C 171.58 169.18 171.23 169 170.87 169.06 Z M 171 171.95 L 182.76 193.64 L 159.23 193.64 L 171 171.95 Z"
+       d="m 170.34,177.79 -3.47,8.89 4.86,-1.73 -1.25,4.87 -0.83,-0.68 0.42,2.74 1.87,-2.29 -1.16,0.29 2.87,-6.44 -5.18,1.67 3.74,-7.38 z m 0.53,-8.73 c -0.26,0.04 -0.49,0.21 -0.62,0.44 l -13.85,25.13 c -0.15,0.28 -0.15,0.64 0,0.91 0.16,0.28 0.44,0.46 0.75,0.46 h 27.7 c 0.31,0 0.6,-0.18 0.75,-0.46 0.15,-0.27 0.15,-0.63 0,-0.91 L 171.75,169.5 c -0.17,-0.32 -0.52,-0.5 -0.88,-0.44 z m 0.13,2.89 11.76,21.69 h -23.53 z"
        fill="#4f0000"
        stroke="none"
        pointer-events="all"
@@ -121,8 +169,8 @@
        y="112"
        width="116"
        height="16"
-       rx="2.4"
-       ry="2.4"
+       rx="2.4000001"
+       ry="2.4000001"
        fill="#3c4752"
        stroke="none"
        pointer-events="all"
@@ -152,8 +200,8 @@
        y="109.75"
        width="26"
        height="34"
-       rx="3.9"
-       ry="3.9"
+       rx="3.9000001"
+       ry="3.9000001"
        fill="#006666"
        stroke="none"
        pointer-events="none"
@@ -172,14 +220,14 @@
        y="114.5"
        width="39"
        height="39"
-       rx="5.85"
-       ry="5.85"
+       rx="5.8499999"
+       ry="5.8499999"
        fill="#1c2126"
        stroke="none"
        pointer-events="none"
        id="rect12" />
     <path
-       d="M 238 120.67 L 226 120.67 Q 216 120.67 221.07 112.05 L 224.6 106.02 Q 228.14 100 238 100 L 242.93 100 Q 247.86 100 252.92 108.62 L 256.46 114.65 Q 260 120.67 250 120.67 Z"
+       d="m 238,120.67 h -12 q -10,0 -4.93,-8.62 l 3.53,-6.03 Q 228.14,100 238,100 h 4.93 q 4.93,0 9.99,8.62 l 3.54,6.03 q 3.54,6.02 -6.46,6.02 z"
        fill="#1c2126"
        stroke="none"
        pointer-events="none"

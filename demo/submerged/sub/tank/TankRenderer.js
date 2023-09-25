@@ -96,8 +96,9 @@ export default class TankRenderer extends SvgRenderer {
 			this.ellipse.remove();
 		}
 
-		let color = this.model.shape.color.asRgbColor();
-
+		let color = this.model.shape.color.asRgbaColor();
+		if (this.model.shape.color.w === 0) color = 'transparent';
+		console.log(color);
 		this.ellipse = this.drawEllipse(
 			this.group,
 			new Vector2(),
@@ -117,22 +118,25 @@ export default class TankRenderer extends SvgRenderer {
 		}
 		if (this.clip) this.clip.remove();
 
-		if (this.model.content.isLiquid.get() && this.model.capacity.get() > 0) {
-			const height = this.model.size.y * this.model.capacity.progress.get();
-			this.fill = this.group.rect(this.model.size.x, height);
-			this.fill.fill(this.model.content.color.asRgbColor());
-			//this.addControlHandlers(this.fill);
+		if (this.model.content.isLiquid.get()) {
+			if (this.model.capacity.get() > 0) {
+				const height = this.model.size.y * this.model.capacity.progress.get();
+				this.fill = this.group.rect(this.model.size.x, height);
+				this.fill.fill(this.model.content.color.asRgbColor());
+				//this.addControlHandlers(this.fill);
 
-			this.clippingEllipse = this.drawEllipse(
-				this.group,
-				new Vector2(),
-				this.model.size
-			);
+				this.clippingEllipse = this.drawEllipse(
+					this.group,
+					new Vector2(),
+					this.model.size.sub(new Vector2(this.model.shape.strokeWidth.get(), this.model.shape.strokeWidth.get())),
+					{width: 0, color: 'transparent'},
+				);
 
-			this.clip = this.group.clip().add(this.clippingEllipse);
-			this.fill.clipWith(this.clip);
+				this.clip = this.group.clip().add(this.clippingEllipse);
+				this.fill.clipWith(this.clip);
 
-			this.moveFill();
+				this.moveFill();
+			}
 		} else {
 			const colorProgress = new ProgressVector3(this.model.shape.color, this.model.content.color);
 			const color = colorProgress.get(this.model.capacity.progress.get()).asRgbColor();
